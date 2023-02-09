@@ -1,9 +1,11 @@
 import { ExampleService } from "./ExampleService";
 
 export class ExampleController {
-  constructor(private exampleService: ExampleService = new ExampleService()) {}
+  constructor(
+    private readonly exampleService: ExampleService = new ExampleService()
+  ) {}
 
-  public getExamples() {
+  public getExamples(): string[] {
     return this.exampleService.getExamples();
   }
 }
