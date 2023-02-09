@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "compile": "tsc && node dist/src/index.js",
-    "dev": "nodemon -e ts --exec \"npm run compile\"",
+    "dev": "npm run tsoa:gen && nodemon -e ts --exec \"npm run compile\"",
     "lint": "eslint . --ext .ts",
     "lint-fix": "npm run lint -- --fix",
     "style-check": "prettier 'src/**/*.ts' --list-different",
     "style-fix": "prettier 'src/**/*.ts' --write",
     "test": "jest",
     "prepare": "husky install",
-    "pre-commit": "npm run lint && npm run test"
+    "pre-commit": "npm run lint && npm run test",
+    "tsoa:gen": "tsoa spec-and-routes"
   },
   "author": "",
   "license": "ISC",
@@ -37,6 +38,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "tsoa": "^5.1.1"
   }
 }

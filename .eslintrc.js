@@ -4,7 +4,11 @@ module.exports = {
     es2021: true,
   },
   extends: "standard-with-typescript",
-  ignorePatterns: ["jest.config.ts"],
+  ignorePatterns: [
+    "jest.config.ts",
+    "src/generatedRoutes",
+    "src/generatedSpec",
+  ],
   overrides: [
     {
       files: ["*.ts", "*.tsx"], // Your TypeScript files extension
